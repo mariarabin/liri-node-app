@@ -19,25 +19,30 @@ switch (action) {
         break;
 }
 
-//node liri.js concert-this <artist/band name here>
-// Basic Node application for requesting data from the OMDB website via axios
-// Here we incorporate the "axios" npm package
-var axios = require("axios");
 
-// We then run the request with axios module on a URL with a JSON
-//This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
+//Different functions below
+function concert() {
 
-axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp").then(
-    function (response) {
-        // Then we print out the 
-        //Name of the venue
+    //node liri.js concert-this <artist/band name here>
+    var axios = require("axios");
 
-        //Venue location
+    //This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
 
-        //Date of the Event (use moment to format this as "MM/DD/YYYY")
-        console.log("The movie's rating is: " + response.data[0].venue.name);
-    }
-);
+    axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp").then(
+        //for (var i = 0; i < response.length; i++) {
+        function (response) {
+            // Then we print out the 
+            //Name of the venue
+
+            //Venue location
+
+            //Date of the Event (use moment to format this as "MM/DD/YYYY")
+            console.log("Name of the venue: " + response.data[0].venue.name);
+            console.log("Venue of the location: " + response.data[0].venue.city + "," + response.data[0].venue.country);
+            console.log("Date of the Event: " + response.data[0].datetime);
+        }
+    );
+}
 
 
 
