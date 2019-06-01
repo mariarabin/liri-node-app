@@ -1,5 +1,6 @@
 
 require('dotenv').config()
+var Spotify = require("node-spotify-api");
 var axios = require("axios");
 var moment = require("moment");
 var action = process.argv[2];
@@ -81,22 +82,44 @@ function movie() {
 }
 
 function spotify() {
-    var Spotify = require("node-spotify-api");
-    var spotify = new Spotify({
-        id: "b949a0817f734eac9384ffa9a54dc57b",
-        secret: "f23ac8a88307475ba9441abf9380a76b"
-    });
 
-    spotify
-        .search({ type: "track", query: value })
-        .then(function (response) {
-            console.log("Artist Name: " + response.tracks.items[1].artists);
-            console.log("Song Title: " + response.tracks.items[1].name);
-            console.log("Preview Link: " + response.tracks.items[1].preview_url);
-            console.log("Album: " + response.tracks.items[1].album);
-            //console.log(Object.keys(response.tracks.items[1].artists[0]));
-        })
-        .catch(function (err) {
-            console.log("Error: " + err);
+    if (value != undefined || value != null) {
+        var spotify = new Spotify({
+            id: "b949a0817f734eac9384ffa9a54dc57b",
+            secret: "f23ac8a88307475ba9441abf9380a76b"
         });
+
+        spotify
+            .search({ type: "track", query: value })
+            .then(function (response) {
+                console.log("Artist Name: " + response.tracks.items[1].artists);
+                console.log("Song Title: " + response.tracks.items[1].name);
+                console.log("Preview Link: " + response.tracks.items[1].preview_url);
+                console.log("Album: " + response.tracks.items[1].album);
+                //console.log(Object.keys(response.tracks.items[1].artists[0]));
+            })
+            .catch(function (err) {
+                console.log("Error: " + err);
+            });
+    }
+    else {
+        var spotify = new Spotify({
+            id: "b949a0817f734eac9384ffa9a54dc57b",
+            secret: "f23ac8a88307475ba9441abf9380a76b"
+        });
+
+        spotify
+            .search({ type: "track", query: "The Sign" })
+            .then(function (response) {
+                console.log("Artist Name: " + response.tracks.items[1].artists);
+                console.log("Song Title: " + response.tracks.items[1].name);
+                console.log("Preview Link: " + response.tracks.items[1].preview_url);
+                console.log("Album: " + response.tracks.items[1].album);
+                //console.log(Object.keys(response.tracks.items[1].artists[0]));
+            })
+            .catch(function (err) {
+                console.log("Error: " + err);
+            });
+    }
+
 }
