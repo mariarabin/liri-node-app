@@ -1,7 +1,11 @@
 
+require('dotenv').config()
+var axios = require("axios");
 var moment = require("moment");
 var action = process.argv[2];
 var value = process.argv[3];
+
+
 
 switch (action) {
     case "concert-this":
@@ -21,7 +25,7 @@ switch (action) {
         break;
 }
 
-var axios = require("axios");
+
 //Different functions below
 function concert() {
     if (value != undefined || value != null) {
@@ -62,7 +66,7 @@ function movie() {
     };
 
     if (value != undefined || value != null) {
-        axios.get("https://www.omdbapi.com/?t=Mr.Nobody&apikey=trilogy").then(
+        axios.get("https://www.omdbapi.com/?t=" + value + "&apikey=trilogy").then(
             function (response) {
                 console.log("Movie Title: " + response.data.Title);
                 console.log("Year the movie came out: " + response.data.Year);
@@ -74,4 +78,25 @@ function movie() {
                 console.log("Movie Actors: " + response.data.Actors);
             })
     };
+}
+
+function spotify() {
+    var Spotify = require("node-spotify-api");
+    var spotify = new Spotify({
+        id: "b949a0817f734eac9384ffa9a54dc57b",
+        secret: "f23ac8a88307475ba9441abf9380a76b"
+    });
+
+    spotify
+        .search({ type: "track", query: value })
+        .then(function (response) {
+            console.log("Artist Name: " + response.tracks.items[1].artists);
+            console.log("Song Title: " + response.tracks.items[1].name);
+            console.log("Preview Link: " + response.tracks.items[1].preview_url);
+            console.log("Album: " + response.tracks.items[1].album);
+            //console.log(Object.keys(response.tracks.items[1].artists[0]));
+        })
+        .catch(function (err) {
+            console.log("Error: " + err);
+        });
 }
