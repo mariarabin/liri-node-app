@@ -130,13 +130,28 @@ function spotify() {
 
 function dowhat() {
     fs.readFile("random.txt", "utf8", function (error, data) {
-        if (error) {
-            return console.log(error);
-        }
+        data = data.split(",");
+        var action = data[0]
+        var value = data[1]
+
         console.log(data);
-        var dataArr = data.split(",");
-        console.log(dataArr);
+        switch (action) {
+            case "concert-this":
+                concert(value);
+                break;
+
+            case "spotify-this-song":
+                spotify(value);
+                break;
+
+            case "movie-this":
+                movie(value);
+                break;
+
+            default:
+                break;
+        }
     });
-}
+};
 
 
