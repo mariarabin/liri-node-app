@@ -23,72 +23,10 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
    * [DotEnv](https://www.npmjs.com/package/dotenv)
    
 
-### Instructions
+**Detailed Instructions at:**
+* [Coding Bootcamp - Activity 10](https://github.com/coding-boot-camp/HARCAM201902FSF5/blob/master/activities/10-nodejs/02-Homework/Instructions/homework_instructions.md)
 
-1. Navigate to the root of your project and run `npm init -y` &mdash; this will initialize a `package.json` file for your project. The `package.json` file is required for installing third party npm packages and saving their version numbers. If you fail to initialize a `package.json` file, it will be troublesome, and at times almost impossible for anyone else to run your code after cloning your project.
-
-2. Make a `.gitignore` file and add the following lines to it. This will tell git not to track these files, and thus they won't be committed to Github.
-
-```
-node_modules
-.DS_Store
-.env
-```
-
-3. Make a JavaScript file named `keys.js`.
-
-* Inside keys.js your file will look like this:
-
-```js
-console.log('this is loaded');
-
-exports.spotify = {
-  id: process.env.SPOTIFY_ID,
-  secret: process.env.SPOTIFY_SECRET
-};
-```
-
-4. Next, create a file named `.env`, add the following to it, replacing the values with your API keys (no quotes) once you have them:
-
-```js
-# Spotify API keys
-
-SPOTIFY_ID=your-spotify-id
-SPOTIFY_SECRET=your-spotify-secret
-
-```
-
-* This file will be used by the `dotenv` package to set what are known as environment variables to the global `process.env` object in node. These are values that are meant to be specific to the computer that node is running on, and since we are gitignoring this file, they won't be pushed to github &mdash; keeping our API key information private.
-
-* If someone wanted to clone your app from github and run it themselves, they would need to supply their own `.env` file for it to work.
-
-5. Make a file called `random.txt`.
-
-   * Inside of `random.txt` put the following in with no extra characters or white space:
-
-     * spotify-this-song,"I Want it That Way"
-
-6. Make a JavaScript file named `liri.js`.
-
-7. At the top of the `liri.js` file, add code to read and set any environment variables with the dotenv package:
-
-```js
-require("dotenv").config();
-```
-
-8. Add the code required to import the `keys.js` file and store it in a variable.
-
-```js
-  var keys = require("./keys.js");
-```
-  
-* You should then be able to access your keys information like so
-
-  ```js
-  var spotify = new Spotify(keys.spotify);
-  ```
-
-9. Make it so liri.js can take in one of the following commands:
+**Make it so liri.js can take in one of the following commands:**
 
    * `concert-this`
 
@@ -110,9 +48,9 @@ require("dotenv").config();
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
      
-     ![Example](/images/movie-a.png)
-      (/images/movie-b.png)
-      (/images/movie-c.png)
+     ![Example](/images/concert-a.png)
+      !(/images/concert-b.png)
+      !(/images/concert-c.png)
      
 
 2. `node liri.js spotify-this-song '<song name here>'`
@@ -127,9 +65,12 @@ require("dotenv").config();
 
      * The album that the song is from
 
-   * If no song is provided then your program will default to "The Sign" by Ace of Base.
+    ![Example](/images/spotify-a.png)
+    ![Example](/images/spotify-b.png)
 
- 
+   * If no song is provided then your program will default to "The Sign" by Ace of Base.
+    ![Example](/images/spotify-c.png)
+
 
 3. `node liri.js movie-this '<movie name here>'`
 
@@ -145,12 +86,17 @@ require("dotenv").config();
        * Plot of the movie.
        * Actors in the movie.
      ```
+     ![Example](/images/movie-a.png)
+      !(/images/movie-b.png)
+
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
 
      * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>
 
      * It's on Netflix!
+     
+     !(/images/movie-c.png)
 
    * You'll use the `axios` package to retrieve data from the OMDB API. Like all of the in-class activities, the OMDB API requires an API key. You may use `trilogy`.
 
@@ -162,7 +108,8 @@ require("dotenv").config();
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
+  ![Example](/images/dowhat-a.png)
+
    * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 
-**Reference:**
-* [Coding Bootcamp - Activity 10](https://github.com/coding-boot-camp/HARCAM201902FSF5/blob/master/activities/10-nodejs/02-Homework/Instructions/homework_instructions.md)
+
