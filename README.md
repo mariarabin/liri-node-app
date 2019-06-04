@@ -110,6 +110,10 @@ require("dotenv").config();
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
      
+     ![Example](/images/movie-a.png)
+      (/images/movie-b.png)
+      (/images/movie-c.png)
+     
 
 2. `node liri.js spotify-this-song '<song name here>'`
 
