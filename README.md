@@ -105,7 +105,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
      * It's on Netflix!
      
-     ![Example](/images/movie-c.png)
+     ![Example](/images/nobody.png)
      
 
    * You'll use the `axios` package to retrieve data from the OMDB API. Like all of the in-class activities, the OMDB API requires an API key. You may use `trilogy`.
