@@ -182,5 +182,7 @@ require("dotenv").config();
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
+   * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 
-**Reference: ** [Coding Bootcamp - Activity 10] (https://github.com/coding-boot-camp/HARCAM201902FSF5/blob/master/activities/10-nodejs/02-Homework/Instructions/homework_instructions.md)
+**Reference:**
+* [Coding Bootcamp - Activity 10](https://github.com/coding-boot-camp/HARCAM201902FSF5/blob/master/activities/10-nodejs/02-Homework/Instructions/homework_instructions.md)
