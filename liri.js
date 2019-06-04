@@ -1,9 +1,9 @@
 
-require('dotenv').config()
 var fs = require("fs");
 var Spotify = require("node-spotify-api");
 var axios = require("axios");
 var moment = require("moment");
+require('dotenv').config()
 var action = process.argv[2];
 var value = process.argv[3];
 
@@ -34,7 +34,7 @@ switch (action) {
 
 //Different functions below
 function concert() {
-    if (value != undefined || value != null) {
+    if (value !== undefined || value !== null) {
         var axios = require("axios");
         //node liri.js concert-this <artist/band name here>
         axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp").then(
@@ -71,6 +71,9 @@ function movie() {
                 console.log("Movie Plot: " + response.data.Language);
                 console.log("Movie Actors: " + response.data.Actors);
             })
+            .catch(function (err) {
+                console.log("Error: " + err);
+            });
     };
 
     if (value != undefined || value != null) {
@@ -85,6 +88,9 @@ function movie() {
                 console.log("Movie Plot: " + response.data.Language);
                 console.log("Movie Actors: " + response.data.Actors);
             })
+            .catch(function (err) {
+                console.log("Error: " + err);
+            });
     };
 }
 
