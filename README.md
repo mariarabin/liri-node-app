@@ -23,10 +23,11 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
    * [DotEnv](https://www.npmjs.com/package/dotenv)
    
 
-**Detailed Instructions at:**
-* [Coding Bootcamp - Activity 10](https://github.com/coding-boot-camp/HARCAM201902FSF5/blob/master/activities/10-nodejs/02-Homework/Instructions/homework_instructions.md)
+4. **Pls. see a more detailed instructions at:**
+   * [Coding Bootcamp - Activity 10](https://github.com/coding-boot-camp/HARCAM201902FSF5/blob/master/activities/10-nodejs/02-Homework/Instructions/homework_instructions.md)
 
-**Make it so liri.js can take in one of the following commands:**
+
+### Make it so liri.js can take in one of the following commands:
 
    * `concert-this`
 
@@ -42,22 +43,24 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
    * This will search the Bands in Town Artist Events API (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`) for an artist and render the following information about each event to the terminal:
 
+    ![Example](/images/concert-func.png)
+
      * Name of the venue
 
      * Venue location
 
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
+    
      
-     ![Example](/images/concert-a.png)
+     ![Example](/images/concert-output.png)
      
-     ![Example](/images/concert-b.png)
-     
-     ![Example](/images/concert-c.png)
      
 
 2. `node liri.js spotify-this-song '<song name here>'`
 
    * This will show the following information about the song in your terminal/bash window
+    
+     ![Example](/images/spotify-a.png)
 
      * Artist(s)
 
@@ -67,8 +70,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
      * The album that the song is from
 
-     ![Example](/images/spotify-a.png)
-     
+   
      ![Example](/images/spotify-b.png)
 
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
@@ -79,6 +81,8 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 3. `node liri.js movie-this '<movie name here>'`
 
    * This will output the following information to your terminal/bash window:
+   
+      ![Example](/images/movie-a.png)
 
      ```
        * Title of the movie.
@@ -90,7 +94,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
        * Plot of the movie.
        * Actors in the movie.
      ```
-       ![Example](/images/movie-a.png)
+
        
        ![Example](/images/movie-b.png)
 
