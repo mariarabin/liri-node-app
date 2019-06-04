@@ -93,11 +93,11 @@ function spotify() {
         spotify
             .search({ type: "track", query: value })
             .then(function (response) {
-                console.log("Artist Name: " + response.tracks.items[1].artists);
+                console.log("Artist Name: " + response.tracks.items[0].album.artists[0].name);
                 console.log("Song Title: " + response.tracks.items[1].name);
-                console.log("Preview Link: " + response.tracks.items[1].preview_url);
-                console.log("Album: " + response.tracks.items[1].album);
-                //console.log(Object.keys(response.tracks.items[1].artists[0]));
+                console.log("Preview Link: " + response.tracks.items[0].preview_url);
+                console.log("Album: " + response.tracks.items[1].album.name);
+
             })
             .catch(function (err) {
                 console.log("Error: " + err);
@@ -112,11 +112,11 @@ function spotify() {
         spotify
             .search({ type: "track", query: "The Sign" })
             .then(function (response) {
-                console.log("Artist Name: " + response.tracks.items[1].artists);
+                //console.log(Object.keys(response.tracks.items);
+                console.log("Artist Name: " + response.tracks.items[0].album.artists[0].name);
                 console.log("Song Title: " + response.tracks.items[1].name);
-                console.log("Preview Link: " + response.tracks.items[1].preview_url);
-                console.log("Album: " + response.tracks.items[1].album);
-                //console.log(Object.keys(response.tracks.items[1].artists[0]));
+                console.log("Preview Link: " + response.tracks.items[0].preview_url);
+                console.log("Album: " + response.tracks.items[1].album.name);
             })
             .catch(function (err) {
                 console.log("Error: " + err);
