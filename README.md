@@ -118,6 +118,6 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-     ![Example](/images/dowhat-a.png)
+     ![Example](/images/dowhat.png)
 
    * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
