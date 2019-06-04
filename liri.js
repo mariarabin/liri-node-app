@@ -56,6 +56,8 @@ function movie() {
     if (value === undefined || value === '' || value === null) {
         axios.get("https://www.omdbapi.com/?t=Mr.Nobody&apikey=trilogy").then(
             function (response) {
+                console.log("If you haven't watched Mr. Nobody then you should: http://www.imdb.com/title/tt0485947/");
+                console.log("It's on Netflix!");
                 console.log("Movie Title: " + response.data.Title);
                 console.log("Year the movie came out: " + response.data.Year);
                 console.log("IMDB Rating: " + response.data.imdbRating);
@@ -110,7 +112,7 @@ function spotify() {
         });
 
         spotify
-            .search({ type: "track", query: "The Sign" })
+            .search({ type: "track", query: '"The Sign"' })
             .then(function (response) {
                 //console.log(Object.keys(response.tracks.items);
                 console.log("Artist Name: " + response.tracks.items[0].album.artists[0].name);
