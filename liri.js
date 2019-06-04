@@ -12,18 +12,22 @@ var value = process.argv[3];
 switch (action) {
     case "concert-this":
         concert();
+        appendF();
         break;
 
     case "spotify-this-song":
         spotify();
+        appendF();
         break;
 
     case "movie-this":
         movie();
+        appendF();
         break;
 
     case "do-what-it-says":
         dowhat();
+        appendF();
         break;
 }
 
@@ -154,4 +158,10 @@ function dowhat() {
     });
 };
 
+
+function appendF() {
+    fs.appendFile("log.txt", action + " > " + value + ", ", function (error) {
+        if (error) throw error;
+    });
+}
 
