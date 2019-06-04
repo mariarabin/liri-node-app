@@ -75,7 +75,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
      
-     ![Example](/images/spotify-c.png)
+     ![Example](/images/ace.png)
 
 
 3. `node liri.js movie-this '<movie name here>'`
@@ -118,7 +118,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-     ![Example](/images/dowhat.png)
+     ![Example](/images/dowhat-it.png)
 
    * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
    
