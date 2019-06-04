@@ -121,3 +121,15 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
      ![Example](/images/dowhat.png)
 
    * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+   
+---
+
+ ### BONUS
+
+* In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
+
+* Make sure you append each command you run to the `log.txt` file. 
+
+* Do not overwrite your file each time you run a command.
+
+![Example](/images/log.png)
