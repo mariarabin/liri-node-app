@@ -49,8 +49,10 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
      * Date of the Event (use moment to format this as "MM/DD/YYYY")
      
      ![Example](/images/concert-a.png)
-      !(/images/concert-b.png)
-      !(/images/concert-c.png)
+     
+     ![Example](/images/concert-b.png)
+     
+     ![Example](/images/concert-c.png)
      
 
 2. `node liri.js spotify-this-song '<song name here>'`
@@ -65,11 +67,13 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
      * The album that the song is from
 
-    ![Example](/images/spotify-a.png)
-    ![Example](/images/spotify-b.png)
+     ![Example](/images/spotify-a.png)
+     
+     ![Example](/images/spotify-b.png)
 
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
-    ![Example](/images/spotify-c.png)
+     
+     ![Example](/images/spotify-c.png)
 
 
 3. `node liri.js movie-this '<movie name here>'`
@@ -86,8 +90,9 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
        * Plot of the movie.
        * Actors in the movie.
      ```
-     ![Example](/images/movie-a.png)
-      !(/images/movie-b.png)
+       ![Example](/images/movie-a.png)
+       
+       ![Example](/images/movie-b.png)
 
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
@@ -96,7 +101,8 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
      * It's on Netflix!
      
-     !(/images/movie-c.png)
+     ![Example](/images/movie-c.png)
+     
 
    * You'll use the `axios` package to retrieve data from the OMDB API. Like all of the in-class activities, the OMDB API requires an API key. You may use `trilogy`.
 
@@ -108,8 +114,6 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
      * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-  ![Example](/images/dowhat-a.png)
+     ![Example](/images/dowhat-a.png)
 
    * Using the `fs` Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
-
-
