@@ -11,23 +11,23 @@ var value = process.argv[3];
 
 switch (action) {
     case "concert-this":
-        concert();
-        appendF();
+        concert(value);
+        appendF(value);
         break;
 
     case "spotify-this-song":
-        spotify();
-        appendF();
+        spotify(value);
+        appendF(value);
         break;
 
     case "movie-this":
-        movie();
-        appendF();
+        movie(value);
+        appendF(value);
         break;
 
     case "do-what-it-says":
-        dowhat();
-        appendF();
+        dowhat(value);
+        appendF(value);
         break;
 }
 
@@ -94,7 +94,7 @@ function movie() {
     };
 }
 
-function spotify() {
+function spotify(value) {
 
     if (value != undefined || value != null) {
         var spotify = new Spotify({
@@ -122,7 +122,7 @@ function spotify() {
         });
 
         spotify
-            .search({ type: "track", query: '"The Sign"' })
+            .search({ type: "track", query: '"The Sign Ace of Base"' })
             .then(function (response) {
                 //console.log(Object.keys(response.tracks.items);
                 console.log("Artist Name: " + response.tracks.items[0].album.artists[0].name);
@@ -141,10 +141,11 @@ function spotify() {
 function dowhat() {
     fs.readFile("random.txt", "utf8", function (error, data) {
         data = data.split(",");
-        var action = data[0]
-        var value = data[1]
+        var action = data[0];
+        var value = data[1];
+        console.log(action);
 
-        console.log(data);
+        console.log(value);
         switch (action) {
             case "concert-this":
                 concert(value);
